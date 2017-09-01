@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>裁剪</title>
+	<style>
+		.img-clip{
+			width: 130px;
+			height: 130px;
+			margin: 200px auto;
+			position: relative;
+			background: url(images/bg.jpg) no-repeat;
+		}
+		.img-clip::before,
+		.img-clip::after{
+			    content: '';
+				width: 100%;	
+				height: 100%;
+				position: absolute;
+				padding: 30px;
+				box-sizing:border-box;
+
+		}
+		.img-clip::before{
+			background: url(images/bg.jpg) no-repeat;
+			background-clip: content-box;
+			background-origin: padding-box;
+			left: 100px;
+
+		}
+		.img-clip::after{
+			background-clip: content-box;
+			background-color: #fff;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="img-clip"></div>
+</body>
+</html>
